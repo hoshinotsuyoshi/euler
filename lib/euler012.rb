@@ -1,11 +1,11 @@
 # coding: utf-8
 class Euler012
-  @@prime    = {}
-  @@prime[0] = 2
+  @prime    = {}
+  @prime[0] = 2
   def self.prime n
-    if !@@prime[n] 
+    if !@prime[n] 
       #差が大きいときはいったん半分まで計算する
-      prime(n/2) if n-(@@prime.size) >= 1000
+      prime(n/2) if n-(@prime.size) >= 1000
       x  = prime(n-1)
       loop do
 	x += 1
@@ -17,9 +17,9 @@ class Euler012
 	end
 	break if x_is_prime
       end
-      @@prime[n] = x
+      @prime[n] = x
     else
-      @@prime[n]
+      @prime[n]
     end
   end
 
