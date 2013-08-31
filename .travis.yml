@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.0.0
+gemfile:
+  - Gemfile
+before_script:
+  - gem install bundler
+script:
+  - bundle exec rspec
+notifications:
+  emails:
+    - guitarpopnot330@gmail.com
+  on_success: always # default: change
+  on_failure: always

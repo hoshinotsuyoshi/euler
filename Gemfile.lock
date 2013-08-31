@@ -15,4 +15,4 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  rspec
+  rspec (= 2.14.1)
