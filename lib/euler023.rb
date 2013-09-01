@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class Array
-  def *(arg) 
+  def **(arg) 
     x = []
     self.each do |e|
       arg.each do |e2|
@@ -62,7 +62,7 @@ class Euler023
     }
     answer = [1]
     hash.each do |k,v|
-      answer = answer * Array.new(v+1).map.with_index{|e,i| k**i}
+      answer = answer ** Array.new(v+1).map.with_index{|e,i| k**i}
     end
     answer.delete n
     answer
