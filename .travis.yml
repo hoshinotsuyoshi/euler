@@ -6,7 +6,7 @@ gemfile:
 before_script:
   - gem install bundler
 script:
-  - bundle exec rspec
+  - bundle exec rspec -c
 notifications:
   emails:
     - guitarpopnot330@gmail.com
