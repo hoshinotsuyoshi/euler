@@ -1,33 +1,33 @@
 # coding: utf-8
 class Euler044
-  @pentagonals = []
   class << self
-    def pentagonals x
-      ((x*(3*x - 1))/2).to_i
+    def pantagonal n
+      #与式
+      n*(3*n-1)/2
     end
-    def add_pentagonal
-      @pentagonals << pentagonals(@pentagonals.size + 1)
-    end
-    def pentagonal? x
-      add_pentagonal if @pentagonals.empty?
-      while x > @pentagonals.last do
-        add_pentagonal
+    def pantagonal? x
+      #五角数かどうかを判別する
+      tmp = 1 + 24*x
+      if (tmp**0.5).to_i**2 == tmp
+	answer = ((tmp**0.5).to_i + 1)/(6.0)
+	answer.to_i.to_f == answer
+      else
+	false
       end
-      !!(@pentagonals.index x)
     end
     def solve
-      add_pentagonal
-      @count = 1
-      while @answer.nil? do
-	@tmp = @pentagonals[0,@count]
-	@tmp.reverse.each do |e|
-	  next unless pentagonal?(@tmp.last - e)
-	  next unless pentagonal?(@tmp.last + e)
-	  break (@answer = @tmp.last-e)
+      c = 1
+      loop do
+        x = pantagonal(c)
+	(1..c).each do |e|
+	  y = pantagonal(e)
+	  next unless pantagonal?(x-y)
+	  next unless pantagonal?(x+y)
+	  return x-y
 	end
-	@count += 1
+	c += 1
       end
-      @answer
     end
   end
 end
+
