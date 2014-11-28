@@ -2,7 +2,7 @@
 class Euler042
   require 'open-uri'
   require 'csv'
-  Words = CSV.open(open("http://projecteuler.net/project/words.txt")).to_a.first
+  Words = CSV.open(open("https://projecteuler.net/project/resources/p042_words.txt")).to_a.first
   @triangles = [1]
   class << self
     def triangle x

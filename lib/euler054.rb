@@ -95,7 +95,7 @@ class Euler054
   end
   class << self
     def solve
-      file = open("http://projecteuler.net/project/poker.txt")
+      file = open("https://projecteuler.net/project/resources/p054_poker.txt")
       deals = CSV.read(file, col_sep: " ")
       deals.map { |deal|
         Hand.new(deal[0,5]) <=> Hand.new(deal[5,5])
