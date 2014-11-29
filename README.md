@@ -1,5 +1,5 @@
 Euler Project Ruby Answers
 ==========================
 
-[![Build Status](https://travis-ci.org/hoshinotsuyoshi/euler.png?branch=master)](https://travis-ci.org/hoshinotsuyoshi/euler)
+[![Build Status](https://api.travis-ci.org/hoshinotsuyoshi/euler.svg?branch=master)](https://travis-ci.org/hoshinotsuyoshi/euler)
 
