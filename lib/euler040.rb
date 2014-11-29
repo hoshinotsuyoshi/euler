@@ -5,14 +5,14 @@ class Euler040
   #              ^
   # x = 12 のとき d(x)=1
 
-  @c = ""
+  @a = []
   @last = 0
   def self.d x
-    while @c.size < x+1 do
+    while @a[x-1].nil? do
       @last += 1
-      @c += @last.to_s
+      @a.push *@last.to_s.split(//).map(&:to_i)
     end
-    @c[x-1].to_i
+    @a[x-1]
   end
   def self.solve
     (0..6).map{|i|10**i}.inject{|product,j|product*d(j)}
