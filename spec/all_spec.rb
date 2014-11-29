@@ -1,5 +1,4 @@
-require 'rspec'
-answers = File.open('answers.txt', 'r').map { |line|line.chomp.to_i }
+answers = File.read('answers.txt').split("\n").map(&:to_i)
 Dir.glob('lib/*.rb').each do |lib|
   require "./#{lib}"
   euler = eval lib.sub('lib/', '').sub('.rb', '').capitalize
