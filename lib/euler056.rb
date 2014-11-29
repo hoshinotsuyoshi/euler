@@ -1,8 +1,3 @@
-# coding: utf-8
-# ruby 2.0.0
-#
-#
-
 class Euler056
   class << self
     def solve

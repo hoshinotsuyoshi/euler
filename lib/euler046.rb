@@ -1,6 +1,3 @@
-# coding: utf-8
-# ruby 2.0.0
-#
 module FixnumRefine
   refine Fixnum do
     def sum_of_a_prime_and_twice_a_square?
