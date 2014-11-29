@@ -1,10 +1,10 @@
 # coding: utf-8
 class Euler025
-  def self.fib n
+  def self.fib(n)
     @fib ||= {}
     @fib[1] = 1
     @fib[2] = 1
-    @fib[n] ||= fib(n-1) + fib(n-2)
+    @fib[n] ||= fib(n - 1) + fib(n - 2)
   end
   def self.solve
     n = 1

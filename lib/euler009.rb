@@ -8,7 +8,7 @@ class Euler009
   def self.solve
     (1..333).each do |a|
       (a..499).each do |b|
-	return a*b*(1000-a-b) if 1_000_000+2*a*b-2000*a-2000*b == 0
+        return a * b * (1000 - a - b) if 1_000_000 + 2 * a * b - 2000 * a - 2000 * b == 0
       end
     end
   end

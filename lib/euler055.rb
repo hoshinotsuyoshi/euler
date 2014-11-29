@@ -5,12 +5,13 @@
 
 class Euler055
   class << self
-    def reversible? n
+    def reversible?(n)
       n == n.to_s.reverse.to_i
     end
-    def lychrel? n
+
+    def lychrel?(n)
       @lychrels ||= {}
-      return @lychrels[n] if not @lychrels[n].nil?
+      return @lychrels[n] unless @lychrels[n].nil?
       c = 0
       @lychrels[n] = loop do
         c += 1
@@ -19,6 +20,7 @@ class Euler055
         break true  if c == 50
       end
     end
+
     def solve
       c = 0
       (1..9999).to_a.reverse.each do |n|

@@ -9,7 +9,7 @@ class Euler059
     end
 
     def ciphered_array
-      self.ciphered.split(',').map(&:to_i)
+      ciphered.split(',').map(&:to_i)
     end
 
     alias_method :c, :ciphered_array
@@ -18,12 +18,12 @@ class Euler059
       ('a'..'z').each do |a|
         ('a'..'z').each do |b|
           ('a'..'z').each do |c|
-            tryed = self.c.map.with_index do |e,i|
-              e.ord ^ [a,b,c][i%3].ord
+            tryed = self.c.map.with_index do |e, i|
+              e.ord ^ [a, b, c][i % 3].ord
             end
             @best ||= tryed
-            #平文はおそらく全てのパターンのうち最も半角スペースを含むものだろう
-            @best,@key = tryed,[a,b,c] if tryed.count(' '.ord) > @best.count(' '.ord)
+            # 平文はおそらく全てのパターンのうち最も半角スペースを含むものだろう
+            @best, @key = tryed, [a, b, c] if tryed.count(' '.ord) > @best.count(' '.ord)
           end
         end
       end
@@ -31,7 +31,7 @@ class Euler059
       # 以下を返せば平文が読める
       # return @best.map(&:chr).join + "\n" + @key.join
 
-      return @best.inject(:+)
+      @best.inject(:+)
     end
   end
 end

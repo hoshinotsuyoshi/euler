@@ -6,7 +6,7 @@ class Euler019
     c = 0
     (1901..2000).each do |yyyy|
       (1..12).each do |mm|
-	c += 1 if Date.new(yyyy,mm,1).sunday?
+        c += 1 if Date.new(yyyy, mm, 1).sunday?
       end
     end
     c
