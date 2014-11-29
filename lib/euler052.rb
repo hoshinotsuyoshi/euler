@@ -1,7 +1,3 @@
-# coding: utf-8
-# ruby 2.0.0
-#
-
 class Euler052
   class << self
     def same?(array)
