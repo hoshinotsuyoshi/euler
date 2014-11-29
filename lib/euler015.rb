@@ -11,16 +11,16 @@ class Euler015
 
   # 階乗
   #
-  def self.factorial n
+  def self.factorial(n)
     @factorial ||= []
     @factorial[0] = 1
-    if @factorial[n] then
+    if @factorial[n]
       @factorial[n]
     else
-      @factorial[n] = factorial(n-1) * n
+      @factorial[n] = factorial(n - 1) * n
     end
   end
   def self.solve
-    factorial(40)/(factorial(20)**2)
+    factorial(40) / (factorial(20)**2)
   end
 end

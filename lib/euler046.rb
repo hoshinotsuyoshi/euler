@@ -5,9 +5,9 @@ module FixnumRefine
   refine Fixnum do
     def sum_of_a_prime_and_twice_a_square?
       n = 1
-      while(2*n*n < self) do
-	return true if (self - 2*n*n).prime?
-	n += 1
+      while 2 * n * n < self
+        return true if (self - 2 * n * n).prime?
+        n += 1
       end
       false
     end
@@ -20,9 +20,9 @@ class Euler046
   class << self
     def solve
       (2..Float::INFINITY).each do |e|
-	next if e.even?
-	next if e.prime?
-	break e if !e.sum_of_a_prime_and_twice_a_square?
+        next if e.even?
+        next if e.prime?
+        break e unless e.sum_of_a_prime_and_twice_a_square?
       end
     end
   end

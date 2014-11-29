@@ -21,18 +21,18 @@ class Euler011
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"
-  Grid = Grid_string.split("\n").map{|digits|digits.split(" ").map(&:to_i)}
+  Grid = Grid_string.split("\n").map { |digits|digits.split(' ').map(&:to_i) }
   @max = 0
-  def self.check num
+  def self.check(num)
     @max = num if num > @max
   end
   def self.solve
     (0..19).each do |i|
       (0..19).each do |j|
-        check(Grid[i][j]*Grid[i][j+1]  *Grid[i][j+2]  *Grid[i][j+3] )  if j < 17 #migi
-        check(Grid[i][j]*Grid[i+1][j]  *Grid[i+2][j]  *Grid[i+3][j] )  if i < 17 #shita
-        check(Grid[i][j]*Grid[i+1][j+1]*Grid[i+2][j+2]*Grid[i+3][j+3]) if i < 17 && j < 17 #naname
-        check(Grid[i][j]*Grid[i+1][j-1]*Grid[i+2][j-2]*Grid[i+3][j-3]) if i < 17 && j > 2 #naname
+        check(Grid[i][j] * Grid[i][j + 1] * Grid[i][j + 2] * Grid[i][j + 3])  if j < 17 # migi
+        check(Grid[i][j] * Grid[i + 1][j] * Grid[i + 2][j] * Grid[i + 3][j])  if i < 17 # shita
+        check(Grid[i][j] * Grid[i + 1][j + 1] * Grid[i + 2][j + 2] * Grid[i + 3][j + 3]) if i < 17 && j < 17 # naname
+        check(Grid[i][j] * Grid[i + 1][j - 1] * Grid[i + 2][j - 2] * Grid[i + 3][j - 3]) if i < 17 && j > 2 # naname
       end
     end
     @max
